@@ -1,7 +1,7 @@
 
 
-output "developers_group_name" {
+output "group_name" {
 
-  value       = aws_iam_group.developers.name
-  description = "The name of the developers IAM group"
+  value       = aws_iam_group.this.name
+  description = "The name of the IAM group"
 }
