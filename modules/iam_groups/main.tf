@@ -4,25 +4,11 @@ resource "aws_iam_group" "developers" {
   name = "developers"
 }
 
-// Define a list of policy ARNs
-variable "policy_arns" {
-
-  type = list(string)
-  default = [
-    "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",
-
-    "arn:aws:iam::aws:policy/CloudWatchLogsReadOnlyAccess",
-
-    "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
-  ]
-
-}
-
 
 // Attach policies to the "developers" group
-resource "aws_iam_group_policy_attachment" "attach_policies" {
+resource "aws_iam_group_policy_attachment" "attach_policies_developers" {
   // Iterate over each policy ARN (converts list to a set)
-  for_each = toset(var.policy_arns)
+  for_each = toset(var.policy_arns_developers)
   //Specify the group name to attach policies to
   group = aws_iam_group.developers.name
   // Use each policy ARN from the list
