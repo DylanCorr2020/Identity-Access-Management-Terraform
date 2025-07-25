@@ -3,8 +3,6 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-
-
 module "developers_group" {
   source     = "./modules/iam_groups"
   group_name = "developers"
@@ -16,3 +14,12 @@ module "developers_group" {
     "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
   ]
 }
+
+module "dev-louis" {
+
+  source    = "./modules/iam_users"
+  user_name = "dev-louis"
+  group     = "developers"
+
+}
+
