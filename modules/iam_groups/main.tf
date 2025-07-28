@@ -1,10 +1,10 @@
 
-
+//create iam group rescource
 resource "aws_iam_group" "this" {
   name = var.group_name
 }
 
-
+//attach policy to group
 resource "aws_iam_group_policy_attachment" "attach_policies" {
   // Iterate over each policy ARN (converts list to a set)
   for_each = toset(var.policy_arns)

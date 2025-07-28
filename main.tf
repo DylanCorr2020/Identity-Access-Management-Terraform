@@ -1,6 +1,6 @@
 // provider is aws 
 provider "aws" {
-  region = "eu-west-1"
+  region = var.region
 }
 
 module "developers_group" {
@@ -15,11 +15,16 @@ module "developers_group" {
   ]
 }
 
-module "dev-louis" {
+module "dev-users" {
 
-  source    = "./modules/iam_users"
-  user_name = "dev-louis"
-  group     = "developers"
+  source     = "./modules/iam_users"
+  user_names = ["dev-louis", "dev-dylan"]
+  group      = "developers"
 
 }
+
+
+
+
+
 
