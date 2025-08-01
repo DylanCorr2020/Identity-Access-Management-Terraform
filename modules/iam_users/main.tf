@@ -1,20 +1,22 @@
 
-//create resource aws_iam_user 
+// Create one IAM user for each name in the user_names list
 resource "aws_iam_user" "this" {
-  //name = var.user_names
 
   for_each = toset(var.user_names)
 
   name = each.value
 }
 
-//attach user to group 
+
+//Assign each IAM user to the specified IAM group
 resource "aws_iam_user_group_membership" "this" {
-
+   
+  // Iterate over each IAM user
   for_each = aws_iam_user.this
-  //user = aws_iam_user.this.name
+  // Specify the username
   user = each.value.name
-
+  
+  // Attach the user to the provided IAM group
   groups = [
     var.group
   ]
