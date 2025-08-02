@@ -1,3 +1,5 @@
+<img width="100%" height="70%" alt="Image" src="https://github.com/user-attachments/assets/70ce7924-4a0a-4c90-9a43-678048abb501" />
+
 # Identity & Access Management with Terraform
 
 This repository provides a modular and scalable way to manage AWS Identity and Access Management (IAM) using Terraform. It defines IAM groups, attaches AWS managed policies, and provisions IAM users into their respective groups.
