@@ -1,4 +1,4 @@
-<img width="100%" height="70%" alt="Image" src="https://github.com/user-attachments/assets/70ce7924-4a0a-4c90-9a43-678048abb501" />
+<img width="100%" height="70%" alt="Image" src="https://github.com/user-attachments/assets/1dced538-9ac2-44a5-823a-23254ce43a7c" />
 
 # Identity & Access Management with Terraform
 
@@ -8,7 +8,7 @@ This repository provides a modular and scalable way to manage AWS Identity and A
 
 ## 📖 Learn More
 
-To learn more about this project, please check out my [Medium post](https://medium.com/@dylancorr.g/how-i-secured-a-startups-aws-account-from-scratch-and-scaled-it-with-terraform-d76781422b18) where I go into more detail about it.
+To learn more about this project, please check out my [Medium post](https://medium.com/@dylancorr.g/how-i-secured-a-startups-aws-account-from-scratch-and-scaled-it-with-terraform-d76781422b18) where I go into more detail.
 
 ## 🔧 Features
 
@@ -21,33 +21,13 @@ To learn more about this project, please check out my [Medium post](https://medi
 
 ## 📁 Project Structure
 
-<pre> ``` ├── main.tf # Root Terraform configuration 
-├── modules/ │ 
+```
+├── main.tf # Root Terraform configuration
+├── modules/ │
 ├── iam_groups/ # Reusable module for IAM groups │
-└── iam_users/ # Reusable module for IAM users 
-└── README.md ``` </pre>
-
-## 🚀 IAM Groups and Policies
-
-This setup creates the following IAM groups and assigns appropriate AWS managed policies:
-
-### 🧾 Finance
-
-- `arn:aws:iam::aws:policy/job-function/Billing`
-
-### ⚙️ Operations
-
-- `arn:aws:iam::aws:policy/AmazonEC2FullAccess`
-- `arn:aws:iam::aws:policy/AmazonRDSFullAccess`
-- `arn:aws:iam::aws:policy/AmazonSSMFullAccess`
-- `arn:aws:iam::aws:policy/CloudWatchFullAccess`
-
-### 📊 Analysts
-
-- `arn:aws:iam::aws:policy/AmazonRDSReadOnlyAccess`
-- `arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess`
-
----
+└── iam_users/ # Reusable module for IAM users
+└── README.md
+```
 
 ## 🛠️ Usage
 
@@ -75,3 +55,12 @@ cd Identity-Access-Management-Terraform
      terraform plan
      terrafrom apply
 ```
+
+## 🔮Conclusion
+
+This project showcases how to manage AWS IAM using modular and reusable Terraform components. It's designed to provide structure, security, and scalability in a cloud environment where team-based access control is essential.
+
+## 📈 Planned Enhancements:
+
+Integrate CI/CD using GitHub Actions to enable automatic validation and deployment of Terraform changes.
+Stay tuned — contributions and suggestions are always welcome!
